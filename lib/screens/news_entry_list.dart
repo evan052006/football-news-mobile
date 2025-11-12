@@ -33,7 +33,6 @@ class _NewsEntryListPageState extends State<NewsEntryListPage> {
     return listNews;
   }
 
-
   @override
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
@@ -46,7 +45,6 @@ class _NewsEntryListPageState extends State<NewsEntryListPage> {
         future: fetchNews(request),
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.data == null) {
-              print("IRAN");
             return const Center(child: CircularProgressIndicator());
           } else {
             if (!snapshot.hasData) {
